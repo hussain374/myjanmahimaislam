@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Only You, Mahima 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      height: 100vh;
+      background-image: url('https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1740&q=80');
+      background-size: cover;
+      background-position: center;
+      font-family: 'Great Vibes', cursive;
+      overflow: hidden;
+      position: relative;
+    }
+    .container {
+      position: relative;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+      z-index: 2;
+    }
+    h1 {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+    .text {
+      font-family: 'Roboto', sans-serif;
+      font-size: 20px;
+      margin: 20px auto;
+      max-width: 700px;
+      line-height: 1.6;
+    }
+    .hearts {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .heart {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Basic_heart.svg/768px-Basic_heart.svg.png') no-repeat center;
+      background-size: contain;
+      animation: float 8s infinite;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Only You, Mahima 💖</h1>
+  <div class="text">
+    তুমি জানো না, কিন্তু আমার হৃদয়ের প্রতিটা ধুকপুকানিতে তোমার নাম বাজে...  
+    <br><br>
+    চোখের সামনে তুমি না থাকলেও, মনের মধ্যে সবসময় একটা জায়গা শুধু তোমার জন্যই রাখি।  
+    <br><br>
+    মাহিমা, তুমি আমার ভালোবাসা, আমার গল্পের একমাত্র প্রধান চরিত্র।  
+    <br><br>
+    💘 সত্যি ভালোবাসি তোমায় — নিজের চেয়েও বেশি 💘
+  </div>
+</div>
+
+<div class="hearts" id="hearts"></div>
+
+<script>
+  // Flying hearts generator
+  const hearts = document.getElementById('hearts');
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = 4 + Math.random() * 4 + "s";
+    hearts.appendChild(heart);
+    setTimeout(() => heart.remove(), 8000);
+  }
+  setInterval(createHeart, 300);
+</script>
+
+</body>
+  </html>
